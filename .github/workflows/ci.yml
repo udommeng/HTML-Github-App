@@ -8,6 +8,8 @@ on:
   pull_request:
     branches:
       - main
+env:
+  MY_HOST: '127.0.0.1'
 
 jobs:
   build-job:
@@ -15,6 +17,7 @@ jobs:
     steps:
       - run: echo  "hello ${{ github.actor }}"
       - run: echo  "ref ${{ github.ref }}"
+      - run: echo  "My Host $MY_HOST"
 
   test-job:
     runs-on: ubuntu-latest
@@ -22,6 +25,7 @@ jobs:
     steps:
       - run: echo "test job"
       - run: echo  "repo is ${{ github.repository }}"
+      - run: echo  "My Host is ${{ env.MY_HOST }}"
 
   deploy-job:
     runs-on: ubuntu-latest
