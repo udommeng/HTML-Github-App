@@ -18,6 +18,7 @@ jobs:
       FULLNAME: 'Megvii'
     steps:
       - run: echo  "${{ vars.COMPANY_NAME }}"
+      - run: echo  "${{ secrets.MYSQL_PASSWORD }}"
       - run: echo  "hello ${{ github.actor }}"
       - run: echo  "ref ${{ github.ref }}"
       - run: echo  "My Host $MY_HOST and $FULLNAME"
