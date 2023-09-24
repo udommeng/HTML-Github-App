@@ -14,10 +14,13 @@ env:
 jobs:
   build-job:
     runs-on: ubuntu-latest
+    env:
+      FULLNAME: 'Megvii'
     steps:
+      - run: echo  "${{ vars.COMPANY_NAME }}"
       - run: echo  "hello ${{ github.actor }}"
       - run: echo  "ref ${{ github.ref }}"
-      - run: echo  "My Host $MY_HOST"
+      - run: echo  "My Host $MY_HOST and $FULLNAME"
 
   test-job:
     runs-on: ubuntu-latest
