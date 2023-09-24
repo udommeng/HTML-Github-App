@@ -17,10 +17,12 @@ jobs:
 
   test-job:
     runs-on: ubuntu-latest
+    needs: build-job #ให้ build-job ทำเสร็จก่อน แล้วค่อยทำ test-job
     steps:
       - run: echo "test job"
 
   deploy-job:
     runs-on: ubuntu-latest
+    needs: test-job #ให้ test-job ทำเสร็จก่อน แล้วค่อยทำ deploy-job
     steps:
       - run: echo "deploy job to production server"
