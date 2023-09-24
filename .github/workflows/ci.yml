@@ -6,10 +6,8 @@ on:
       - main
 
   pull_request:
-    types:
-      - opened
     branches:
-      - '*feature'
+      - main
 
 jobs:
   build-job:
